@@ -19,3 +19,50 @@ body {
   align-items: center;
   /* background-image: url("/img/mine.jpg"); */
 }
+
+#root {
+  display: flex;
+  width: 85%;
+  height: 85%;
+}
+
+/* left-side */
+
+#left-side {
+  width: 45%;
+  height: 100%;
+  /* min-width: 300px; */
+}
+
+#left-side .user-nav {
+  width: 95%;
+  height: 65px;
+  background-color: rgb(202, 202, 202);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+#left-side .user-nav .left-user-icons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+#left-side .user-nav .left-user-icons .user-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+/* #left-side .user-nav .left-user-icons .user-name {
+  height: 100%;
+  font-size: 18;
+} */
+
+#left-side .user-nav .right-user-icons i {
+  margin-left: 10px;
+  color: bisque;
+}
