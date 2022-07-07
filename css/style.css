@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    #0b6a3c 0%,
+    #0b6a3c 20%,
+    whitesmoke 20%,
+    white 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("/img/mine.jpg"); */
+}
