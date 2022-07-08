@@ -13,6 +13,7 @@ var app = new Vue({
     index: 0, //index
     activeContact: null,
     messageText: "",
+    active: false,
     contacts: [
       {
         name: "Michele",
