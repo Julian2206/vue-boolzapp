@@ -120,3 +120,38 @@ body {
   width: 80%;
   text-align: center;
 }
+
+#left-side .contact-list {
+  width: 95%;
+  height: 100%;
+  background-color: whitesmoke;
+  overflow-y: scroll;
+}
+
+#left-side .contact-list .contact {
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#left-side .contact-list .contact .left-contact {
+  display: flex;
+  /*   align-items: center; */
+  height: 100%;
+}
+
+#left-side .contact-list .contact .left-contact img {
+  margin-right: 5px;
+}
+
+/* ? for active contacts */
+.contact-active {
+  background-color: lightblue;
+}
+
+#left-side .contact-list .contact .left-contact .last-message {
+  width: 200px;
+  font-size: 14px;
+  color: grey;
+}
