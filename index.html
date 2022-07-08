@@ -59,9 +59,13 @@
 
         <!-- contact-list -->
         <div class="contact-list">
-          <div class="contact" v-for="(contact, index) in contacts">
+          <div class="contact" v-for="(contact, index) in index">
             <div class="left-contact">
-              <img src="/img/avatar_1.jpg" alt="" />
+              <img
+                class="user-image"
+                :src="userImage(index)"
+                alt="contact.name"
+              />
             </div>
           </div>
         </div>
