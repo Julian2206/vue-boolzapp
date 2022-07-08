@@ -59,13 +59,21 @@
 
         <!-- contact-list -->
         <div class="contact-list">
-          <div class="contact" v-for="(contact, index) in index">
+          <div
+            class="contact"
+            v-for="(contact, index) in filteredContacts"
+            :class="(index == currentContact ? 'contact-active': null)"
+            @click="setIndexContact(index)"
+          >
             <div class="left-contact">
               <img
                 class="user-image"
-                :src="userImage(index)"
-                alt="contact.name"
+                :src="`img/avatar${contacts[currentContact].avatar}.jpg`"
+                alt=""
               />
+              <div class="info">
+                <div class="contact-name">{{ contact.name }}</div>
+              </div>
             </div>
           </div>
         </div>

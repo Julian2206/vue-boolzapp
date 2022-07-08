@@ -10,7 +10,7 @@ visualizzare nome e immagine di ogni contatto presente nella struttura dati cons
 var app = new Vue({
   el: "#root",
   data: {
-    index: 0, //index
+    currentContact: 0, //index
     activeContact: null,
     contacts: [
       {
@@ -177,12 +177,21 @@ var app = new Vue({
     ],
   },
   methods: {
-    /* setActiveContact: function (index) {
-      this.activeContact = index;
-    }, */
+    setIndexContact: function (position) {
+      this.currentContact = position;
+      return position;
+    },
 
-    userImage: function (index) {
-      return `img/avatar${contacts[index].avatar}.jpg`;
+    newUserImage: function (currentContact) {
+      return `img/avatar${contacts[currentContact].avatar}.jpg`;
+    },
+  },
+  computed: {
+    filteredContacts() {
+      console.log(this);
+      return this.contacts.filter((element) => {
+        return element.name;
+      });
     },
   },
 });

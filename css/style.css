@@ -57,6 +57,12 @@ body {
   margin-right: 20px;
 }
 
+.user-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
 /* #left-side .user-nav .left-user-icons .user-name {
   height: 100%;
   font-size: 18;
