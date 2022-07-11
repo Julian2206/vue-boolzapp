@@ -243,3 +243,17 @@ body {
 .message-received {
   background-color: #fff;
 }
+
+#right-side .message-area .dropdown {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  right: 0;
+  transform: translateX(-50%);
+  cursor: pointer;
+  display: none;
+}
+
+#right-side .message-area .dropdown-active {
+  display: block;
+}

@@ -12,6 +12,7 @@ var app = new Vue({
   data: {
     index: 0, //index
     activeContact: 0,
+    currentMessage: null,
     messageText: "",
     search: "",
     active: false,
@@ -198,6 +199,7 @@ var app = new Vue({
     /* new message */
     newMessage: function (contact) {
       let newSentMessage = {
+        date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
         message: this.messageText,
         status: "sent",
       };
@@ -208,21 +210,33 @@ var app = new Vue({
 
       setTimeout(() => {
         let newReceivedMessage = {
-          date: "",
+          date: dayjs().format("DD/MM/YYYY HH:mm:ss"),
           message: "Ok",
           status: "received",
         };
         this.filteredContacts[contact].messages.push(newReceivedMessage);
       }, 1000);
     },
+
+    setIndexMessage: function (position) {
+      this.currentMessage = position;
+      return this.currentMessage;
+    },
+
+    removeIndexMessage: function () {
+      this.currentMessage = null;
+      return this.currentMessage;
+    },
+
+    deleteMessage: function (position, messagePosition) {
+      this.filteredContacts[position].messages.splice(messagePosition, 1);
+    },
   },
   computed: {
     filteredContacts() {
       console.log(this);
       return this.contacts.filter((element) => {
-        return element.name
-          .toLocaleLowerCase()
-          .includes(this.search.toLowerCase());
+        return element.name.toLowerCase().includes(this.search.toLowerCase());
       });
     },
   },
