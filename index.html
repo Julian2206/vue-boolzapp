@@ -59,6 +59,8 @@
             class="search-bar"
             type="text"
             placeholder="Cerca o inizia nuova chat"
+            v-model="search"
+            @keydown.enter="filteredContacts()"
           />
         </div>
         <!-- end-search-contacts -->

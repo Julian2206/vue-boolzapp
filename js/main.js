@@ -13,7 +13,7 @@ var app = new Vue({
     index: 0, //index
     activeContact: 0,
     messageText: "",
-    searched: "",
+    search: "",
     active: false,
     contacts: [
       {
@@ -198,7 +198,6 @@ var app = new Vue({
     /* new message */
     newMessage: function (contact) {
       let newSentMessage = {
-        date: "",
         message: this.messageText,
         status: "sent",
       };
@@ -221,7 +220,9 @@ var app = new Vue({
     filteredContacts() {
       console.log(this);
       return this.contacts.filter((element) => {
-        return element.name;
+        return element.name
+          .toLocaleLowerCase()
+          .includes(this.search.toLowerCase());
       });
     },
   },
