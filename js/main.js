@@ -194,6 +194,28 @@ var app = new Vue({
       const userImage = `img/avatar${contacts[index].avatar}.jpg`;
       return userImage;
     },
+
+    /* new message */
+    newMessage: function (contact) {
+      let newSentMessage = {
+        date: "",
+        message: this.messageText,
+        status: "sent",
+      };
+
+      this.filteredContacts[contact].messages.push(newSentMessage);
+
+      this.messageText = "";
+
+      setTimeout(() => {
+        let newReceivedMessage = {
+          date: "",
+          message: "Ok",
+          status: "received",
+        };
+        this.filteredContacts[contact].messages.push(newReceivedMessage);
+      }, 1000);
+    },
   },
   computed: {
     filteredContacts() {

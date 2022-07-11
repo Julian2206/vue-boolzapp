@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- day js -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
     <!-- fonts -->
     <link
       rel="stylesheet"
@@ -139,6 +145,7 @@
             type="text"
             placeholder="Scrivi un messaggio"
             v-model="messageText"
+            @keydown.enter="newMessage(activeContact)"
           />
           <i class="fa-solid fa-microphone"></i>
         </div>
