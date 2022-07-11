@@ -11,7 +11,7 @@ var app = new Vue({
   el: "#root",
   data: {
     index: 0, //index
-    activeContact: null,
+    activeContact: 0,
     messageText: "",
     searched: "",
     active: false,
@@ -189,6 +189,7 @@ var app = new Vue({
       return position;
     },
 
+    // dinamic user image
     newUserImage: function (index) {
       const userImage = `img/avatar${contacts[index].avatar}.jpg`;
       return userImage;
