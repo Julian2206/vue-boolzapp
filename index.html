@@ -11,7 +11,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <!-- css -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
   </head>
 
   <!-- body sections -->
@@ -118,10 +118,15 @@
           <div
             class="message"
             v-for="(message, index) in filteredContacts[activeContact].messages"
+            :class="(filteredContacts[activeContact].messages[index].status === 'sent') ? 'message-sent': 'message-received'"
           >
             <div class="message-text">
               {{contacts[activeContact].messages[index].message}}
             </div>
+            <span class="message-date"
+              >{{ contacts[activeContact].messages[index].date }}</span
+            >
+            <!-- dropdown -->
           </div>
 
           <!-- end text-area -->
@@ -143,5 +148,5 @@
     </div>
   </body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script src="js/main.js"></script>
+  <script src="./js/main.js"></script>
 </html>

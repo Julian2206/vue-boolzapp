@@ -207,6 +207,22 @@ body {
   overflow-y: scroll;
 }
 
+#right-side .message-area .message {
+  position: relative;
+  width: 350px;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 15px 30px 20px 10px;
+}
+
+#right-side .message-area .message .message-date {
+  position: absolute;
+  font-size: 10px;
+  color: grey;
+  right: 5px;
+  bottom: 5px;
+}
+
 #right-side #write-input {
   display: flex;
   justify-content: space-between;
@@ -217,4 +233,13 @@ body {
 
 #right-side #write-input .text-input {
   width: 80%;
+}
+
+.message-sent {
+  align-self: flex-end;
+  background-color: #e4f8d4;
+}
+
+.message-received {
+  background-color: #fff;
 }
