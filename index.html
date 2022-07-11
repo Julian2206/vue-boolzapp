@@ -116,7 +116,7 @@
           <div
             class="message"
             v-for="(message, index) in filteredContacts[index].messages"
-            :class="message.status"
+            :class=""
           >
             <div class="message-text">
               {{filteredContacts[index].messages[index].message}}
@@ -124,6 +124,17 @@
           </div>
 
           <!-- end text-area -->
+        </div>
+
+        <div id="write-input">
+          <i class="fa-solid fa-face-smile"></i>
+          <input
+            class="text-input"
+            type="text"
+            placeholder="Scrivi un messaggio"
+            v-model="messageText"
+          />
+          <i class="fa-solid fa-microphone"></i>
         </div>
         <!-- end-right-side -->
       </div>
