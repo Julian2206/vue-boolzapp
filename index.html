@@ -65,7 +65,6 @@
             @click="setActiveContact(index)"
             :class="(index === activeContact) ? 'contact-active': null"
             v-if="contact.visible === true"
-            v-else="contact.visible === false"
           >
             <div class="left-contact">
               <img
@@ -101,7 +100,9 @@
               alt=""
             />
             <div class="contact-info">
-              <div class="contact-name">{{filteredContacts[index].name}}</div>
+              <div class="contact-name">
+                {{filteredContacts[activeContact].name}}
+              </div>
               <div class="last-access">Ultimo accesso oggi alle ore 12:00</div>
             </div>
           </div>
@@ -116,11 +117,10 @@
         <div class="message-area">
           <div
             class="message"
-            v-for="(message, index) in filteredContacts[index].messages"
-            :class=""
+            v-for="(message, index) in filteredContacts[activeContact].messages"
           >
             <div class="message-text">
-              {{contacts[index].messages[index].message}}
+              {{contacts[activeContact].messages[index].message}}
             </div>
           </div>
 
